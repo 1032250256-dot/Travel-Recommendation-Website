@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelExplore - Discover Your Perfect Destination</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo" onclick="showPage('home')">TravelExplore</a>
+            <ul>
+                <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="about" onclick="showPage('about')">About Us</a></li>
+                <li><a href="#" class="nav-link" data-page="contact" onclick="showPage('contact')">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Discover Your Dream Destination</h1>
+                <p>Personalized travel recommendations tailored just for you</p>
+                <a href="#recommendations" class="btn">Explore Now</a>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="intro">
+            <div class="container">
+                <h2>Welcome to TravelExplore</h2>
+                <p>Your gateway to discovering the world's most breathtaking destinations. Whether you're seeking serene beaches, ancient temples, or vibrant cities, we provide personalized recommendations to make your travel dreams come true. Let us guide you through unforgettable experiences and help you create memories that will last a lifetime.</p>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-container">
+            <div class="container">
+                <input type="text" id="searchInput" placeholder="Search for beaches, temples, or countries..." onkeyup="searchRecommendations()">
+                <button class="btn" onclick="clearSearch()">Clear</button>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="recommendations">
+            <div class="container">
+                <!-- Beach Recommendations -->
+                <div class="recommendation-category" id="beach-category">
+                    <h3>🏖️ Beach Destinations</h3>
+                    <div class="recommendation-grid">
+                        <div class="recommendation-card beach-card">
+                            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Maldives Beach">
+                            <div class="content">
+                                <h4>Maldives</h4>
+                                <p class="location">📍 Indian Ocean</p>
+                                <p>Experience paradise on earth with crystal-clear turquoise waters, pristine white sand beaches, and luxurious overwater bungalows. Perfect for honeymooners and those seeking ultimate relaxation.</p>
+                            </div>
+                        </div>
+                        <div class="recommendation-card beach-card">
+                            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=600" alt="Bali Beach">
+                            <div class="content">
+                                <h4>Bali, Indonesia</h4>
+                                <p class="location">📍 Indonesia</p>
+                                <p>Discover stunning beaches complemented by rich culture, ancient temples, and lush rice terraces. Enjoy world-class surfing, vibrant nightlife, and spiritual retreats in this tropical paradise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temple Recommendations -->
+                <div class="recommendation-category" id="temple-category">
+                    <h3>🛕 Temple & Cultural Sites</h3>
+                    <div class="recommendation-grid">
+                        <div class="recommendation-card temple-card">
+                            <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=600" alt="Angkor Wat">
+                            <div class="content">
+                                <h4>Angkor Wat</h4>
+                                <p class="location">📍 Cambodia</p>
+                                <p>Explore the magnificent 12th-century temple complex, the largest religious monument in the world. Marvel at intricate carvings, towering spires, and witness breathtaking sunrises over ancient ruins.</p>
+                            </div>
+                        </div>
+                        <div class="recommendation-card temple-card">
+                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600" alt="Kyoto Temples">
+                            <div class="content">
+                                <h4>Kyoto Temples</h4>
+                                <p class="location">📍 Japan</p>
+                                <p>Immerse yourself in traditional Japanese culture with over 2,000 temples and shrines. Visit the iconic Golden Pavilion, walk through thousands of vermillion torii gates, and experience Zen gardens.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Country Recommendations -->
+                <div class="recommendation-category" id="country-category">
+                    <h3>🌍 Country Highlights</h3>
+                    <div class="recommendation-grid">
+                        <div class="recommendation-card country-card">
+                            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=600" alt="Switzerland">
+                            <div class="content">
+                                <h4>Switzerland</h4>
+                                <p class="location">📍 Europe</p>
+                                <p>Experience Alpine perfection with majestic mountains, pristine lakes, and charming villages. Enjoy world-class skiing, scenic train journeys, chocolate tours, and Swiss hospitality in this picture-perfect country.</p>
+                            </div>
+                        </div>
+                        <div class="recommendation-card country-card">
+                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600" alt="New Zealand">
+                            <div class="content">
+                                <h4>New Zealand</h4>
+                                <p class="location">📍 Oceania</p>
+                                <p>Adventure awaits in the land of dramatic landscapes, from fjords and glaciers to geothermal wonders and pristine beaches. Perfect for thrill-seekers and nature lovers seeking outdoor adventures.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about-page" class="page-content hidden">
+        <div class="container">
+            <div class="about-content">
+                <h2>About TravelExplore</h2>
+                
+                <div class="mission">
+                    <h3>Our Mission</h3>
+                    <p>At TravelExplore, our mission is to inspire and empower travelers to discover the world's most incredible destinations. We believe that travel enriches lives, broadens perspectives, and creates lasting memories. Through personalized recommendations and comprehensive travel guides, we strive to make every journey unforgettable.</p>
+                    <p>Founded in 2024, we've helped thousands of travelers find their perfect destinations, from serene beaches to historic temples and vibrant cities. Our team of travel experts continuously researches and curates the best experiences to ensure you have access to the most current and authentic travel information.</p>
+                </div>
+
+                <div class="team">
+                    <h3>Our Team</h3>
+                    <p>Our passionate team consists of experienced travelers, destination experts, and technology enthusiasts who share a common love for exploration and adventure. With decades of combined travel experience spanning every continent, we bring firsthand knowledge and insights to help you plan your perfect trip.</p>
+                    <p>We're committed to sustainable and responsible tourism, promoting destinations that respect local cultures and preserve natural environments for future generations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div id="contact-page" class="page-content hidden">
+        <div class="container">
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TravelExplore. All rights reserved. Discover your next adventure with us!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
